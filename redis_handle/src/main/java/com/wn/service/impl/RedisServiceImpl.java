@@ -16,7 +16,7 @@ public class RedisServiceImpl implements RedisService {
     public ParmAndResult getVal(ParmAndResult parmAndResult) {
         ValueOperations<String, String> val = stringRedisTemplate.opsForValue();
         String s = val.get(parmAndResult.getT());
-        if (s.length()>0){
+        if (s != null){
             return ParmAndResult.succeed().setT(s);
         }
         return parmAndResult.err();
