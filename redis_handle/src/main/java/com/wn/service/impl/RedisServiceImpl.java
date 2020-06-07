@@ -16,6 +16,7 @@ public class RedisServiceImpl implements RedisService {
     public ParmAndResult getVal(ParmAndResult parmAndResult) {
         ValueOperations<String, String> val = stringRedisTemplate.opsForValue();
         String s = val.get(parmAndResult.getT());
+        //判断redis获取的是否为空值
         if (s != null){
             return ParmAndResult.succeed().setT(s);
         }
