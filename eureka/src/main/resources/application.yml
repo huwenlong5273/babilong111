@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: eureaka
+
+server:
+  port: 8761
+
